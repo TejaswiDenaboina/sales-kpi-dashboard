@@ -24,6 +24,7 @@ def _metric(label, value):
 
 
 app = Dash(__name__)
+server = app.server   
 YEARS = ['All'] + sorted(df['order_year'].unique().tolist(), reverse=True)
 
 app.layout = html.Div([
@@ -119,4 +120,4 @@ def update(year):
     return fig1, fig2, fig3, fig4, fig5
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=False, host='0.0.0.0', port=8050)
