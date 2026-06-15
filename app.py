@@ -119,5 +119,12 @@ def update(year):
 
     return fig1, fig2, fig3, fig4, fig5
 
-if __name__ == '__main__':
-    app.run(debug=False, host='0.0.0.0', port=8050)
+import os
+
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 8050))
+    app.run(
+        debug=False,
+        host="0.0.0.0",
+        port=port
+    )
